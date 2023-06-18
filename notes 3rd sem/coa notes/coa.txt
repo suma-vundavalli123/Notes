@@ -1,0 +1,45 @@
+A computer system uses 16-bit memory addresses. It has a 2K-byte cache 
+organized in a direct-mapped manner with 64 bytes per cache block. 
+Assume that the size of each memory word is 1 byte. 
+(a) Calculate the number of bits in each of the Tag, Block, and Word 
+fields of the memory address. 
+(b) When a program is executed, the processor reads data sequentially 
+from the following word addresses: 128, 144, 2176, 2180, 128, 2176 All 
+the above addresses are shown in decimal values. Assume that the cache 
+is initially empty. For each of the above addresses, indicate whether the 
+cache access will result in a hit or a miss.
+
+
+Main Memory Adress == 16 bit 
+cache memory === 2Kbytes 
+ each cache block == 64 bytes
+
+no. of cache blocks ==   2 k/ 64 === 2^5
+
+
+(a) WORD == 64 == 2^6  === 6 Bbits
+  
+       BLOCK == 5 bits 
+
+        TAG ==  16 -(5+6) == 5                                                                                                  
+                                                                                                                       
+(b) 0128 - 0000 0001 0010 1000    block== 00100 = 4
+       0144   0000 0001 0100 0100      block == 00101 = 5
+       2176   0010 0001 0111 0110      block == 00101 = 5
+    2180      0010 0001 1000 0000    block 00110 = 6
+0128       0000 0001 0010 1000       block 00100 = 4
+2176    0010 0001 0111 0110          block 00101 = 5
+
+IInitiallythe cache is empty
+so 0128 === cache miss
+      0144 == cache miss
+      2176 == cache hit
+    2180= = cache miss
+       0128 == cache hit 
+        2176 == cache hit 
+
+
+
+
+
+     
